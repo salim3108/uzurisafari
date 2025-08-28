@@ -1,0 +1,86 @@
+{% extends 'base_testm.html' %}
+
+{% load static %}
+
+    {% block content %}
+        <section class="about-sections">
+            <h2>Our Story</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        <b>Uzuri Safaris Ltd</b> was founded in 2020, we believe travel should be personal, 
+                        meaningful, and unforgettable. Based in the heart of Tanzania — one of East Africa's 
+                        most stunning and diverse destinations we specialize in tailor-made safaris 
+                        that go far beyond the ordinary.
+                    </p>
+                    <p>
+                        Guided by our core values — <b>authenticity, personal connection</b>, and <b> community empowerment </b>
+                        we craft experiences that are as meaningful as they are magical.
+                    </p>
+                    <p>
+                        With our <b>own fleet, expert local guides</b>, and <b>custom itineraries</b>, we offer exclusive safaris 
+                        that connect you deeply with nature, culture, and community.
+                    </p>
+                    <p class="last-para">
+                        This isn't just adventure. <br> 
+                        This is <b>your journey of a lifetime</b> — the <b>Uzuri way.</b>
+                    </p>
+
+                </div>
+                <div class="about-image">
+                    <img src="{% static 'images/beach.jpg' %}" alt="Our Team on Adventure" loading="lazy"/>
+                </div>
+            </div>
+        </section>
+
+         <!-- Vision & Mission -->
+        <section class="about-sections">
+            <h2>Our Vision & Mission</h2>
+            <div class="vision-mission">
+                <div>
+                    <h3>Our Mission</h3>
+                    <p>
+                       At Uzuri Safaris Ltd., our mission is to create <b>exceptional, tailor-made travel experiences</b>
+                       that showcase the true beauty of Tanzania. We are committed to offering <b>authentic adventures, 
+                       personalized service</b>, and promoting <b>responsible tourism</b> that uplifts local communities and preserves our natural heritage. 
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Our Vision</h3>
+                    <p>
+                        To be Tanzania's most trusted and inspiring <b>specialized tour company</b>, known 
+                        for providing memorable and impactful adventures that bridge tourists with Africa's 
+                        rich landscapes, vibrant cultures, and timeless spirit. Our vision is to leave a 
+                        positive legacy empowering local people and preserving the natural wonders that make 
+                        every journey extraordinary.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team -->
+        <section class="about-sections team">
+            <h2>Meet Our Team</h2>
+            <div class="team-container">
+                <div class="team-slider">
+                    {% if members %}
+                        {% for member in members %}
+                        <div class="team-card">
+                            <div class="card-content">
+                                <img src="{{ member.profilePicture.url }}" alt="{{ member.full_name }}" class="team-photo" loading="lazy">
+                                <h4>{{ member.fullName }}</h4>
+                                <p class="position">{{ member.position }}</p>
+                                <small>{{ member.biography|truncatewords:20 }}</small>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No team members available at the moment.</p>
+                    {% endif %}
+                </div>
+            </div>
+            </section>
+
+    
+    {% endblock %}

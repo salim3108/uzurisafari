@@ -1,0 +1,208 @@
+{% extends 'base_testm.html' %}
+
+{% load static %}
+
+    {% block content %} 
+        <section class="adventures">
+            <div class="adventure-card" id="beachAdventure">
+                <img src="{% static 'images/adventure/beach.jpg' %}" alt="Beach Adventure" loading="lazy"/>
+                <div class="adventure-card-content">
+                    <h3>🌴 Discover Paradise: Zanzibar & Mafia Island Beach Escapes</h3>
+                    <span class="adventure-intro">
+                        Escape to the idyllic shores of Zanzibar and Mafia Island, where sun-kissed beaches, 
+                        vibrant coral reefs, and rich cultural heritage await. Whether you seek adventure or relaxation, 
+                        these tropical gems offer unforgettable experiences.
+                    </span>
+                    <div class="details">
+                        <article>
+                            <h4>✨ Zanzibar - The Spice Island's Coastal Magic</h4>
+                            <span class="adventure-description">
+                                Zanzibar, known as the Spice Island, is a tropical paradise with stunning beaches, rich culture, and vibrant marine life.
+                                Experience the perfect blend of relaxation and adventure in this enchanting destination.
+                            </span>
+                            <p>
+                                Spend your days snorkeling vibrant coral reefs in Mnemba Atoll, swimming alongside 
+                                colorful marine life, or kite surfing along the breezy east coast. As evening falls,
+                                unwind with fresh seafood under a canopy of stars, with the soothing sound of waves completing your perfect day.
+                            </p>
+                            <p>
+                                Step onto the sun-kissed shores of Zanzibar, where powdery white sands meet the shimmering 
+                                turquoise Indian Ocean. From the vibrant cultural heartbeat of Stone Town to the tranquil 
+                                beaches of Nungwi and Paje, Zanzibar is a tropical dream come true.
+                            </p>
+                            <p class="last-para"> Discover Stone Town's winding alleys, vibrant markets, and historic architecture. Visit spice plantations to experience Zanzibar's aromatic heritage.</p>
+
+                            <h4>🌊 Mafia Island - Tanzania's Hidden Marine Paradise</h4>
+                            <span class="adventure-description">
+                                Venture to Mafia Island, a hidden gem known for its pristine beaches and incredible marine biodiversity.
+                                Experience the untouched beauty of this tranquil paradise.
+                            </span>
+                            <p>
+                                For a more secluded and authentic experience, discover Mafia Island—a pristine haven where 
+                                nature thrives and time slows down. Home to the Mafia Island Marine Park, this unspoiled sanctuary offers extraordinary 
+                                diving and snorkeling among thriving coral gardens, sea turtles, and playful dolphins.
+                            </p>
+                            <p>
+                                Between October and March, don't miss the unforgettable opportunity to swim with majestic 
+                                whale sharks, the gentle giants of the ocean. Explore Chole Bay by traditional dhow, 
+                                relax on deserted sandbanks, and immerse yourself in the warm hospitality of island life.
+                            </p>
+                            <p class="last-para"> Mafia Island is a paradise for divers and snorkelers, with vibrant coral reefs and abundant marine life.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="adventure-card" id="mountainHiking">
+                <img src="{% static 'images/adventure/mountain hiking.jpg' %}" alt="Mountain Hiking" loading="lazy"/>
+                <div class="adventure-card-content">
+                    <h3>🗻 Conquer Tanzania's Majestic Peaks: Mt. Kilimanjaro & Mt. Meru</h3>
+                    <span class="adventure-intro">
+                        Experience the thrill of standing atop Africa's highest peaks. 
+                        From the snow-capped summit of Mt. Kilimanjaro to the breathtaking views from Mt. Meru, 
+                        these iconic mountains offer unforgettable adventures for trekkers and climbers.
+                    </span>
+                    <div class="details">
+                        <article>
+                            <h4>🌟 Mt. Kilimanjaro - Stand on the Roof of Africa</h4>
+                            <span class="adventure-description">
+                                Embark on the adventure of a lifetime as you trek to the summit of <b>Mt. Kilimanjaro</b>, 
+                                Africa's highest peak and one of the world's most iconic mountains.
+                            </span>
+                            <p>
+                                Rising 5,895 meters above sea level, Mt. Kilimanjaro is the highest free-standing mountain in the world—and
+                                one of the most iconic trekking destinations on Earth. From lush rainforests alive with colobus monkeys to the surreal 
+                                beauty of alpine deserts and glaciers, every step of your ascent is a journey through diverse landscapes.
+                            </p>
+                            <p>
+                                Choose from legendary routes like the <b>Machame Route</b> (“Whiskey Route”) for panoramic views, 
+                                or the <b>Marangu Route</b> with comfortable hut accommodations. As you approach the summit at Uhuru Peak, 
+                                the first light of dawn paints the glaciers gold—an unforgettable moment of triumph and wonder.
+                            </p>
+                            <p class="last-para"> Whether you're a seasoned climber or a first-time trekker, Kilimanjaro offers an adventure that will challenge your limits and inspire your spirit.</p>
+
+                            <h4>🏔️ Mt. Meru - A Hidden Gem for Adventurers</h4>
+                            <span class="adventure-description">
+                                Often overshadowed by its famous neighbor, <b>Mt. Meru</b> offers a challenging yet rewarding trek with stunning views and rich wildlife.
+                            </span>
+                            <p>
+                                Often overlooked yet truly spectacular, <b>Mt. Meru</b> rises gracefully above Arusha National Park to 4,566 meters.This striking volcanic cone 
+                                offers an exhilarating climb through lush forests inhabited by giraffes, buffalo, and diverse birdlife.                        
+                            </p>
+                            <p>
+                                The trek to <b>Meru's crater rim</b> is both challenging and deeply rewarding. As you ascend, you'll witness 
+                                sweeping views over the Rift Valley and Mt. Kilimanjaro floating on the horizon. Sunrise from 
+                                <b>Meru's Socialist Peak</b> bathes the surrounding landscape in warm light, a moment of pure awe.
+                            </p>
+                            <p class="last-para"> Mt. Meru is perfect for those seeking a less crowded, more intimate trekking experience with breathtaking scenery and rich wildlife.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="adventure-card" id="safari">
+                <img src="{% static 'images/adventure/wildlife safari.jpg' %}" alt="Safari" loading="lazy"/>
+                <div class="adventure-card-content">
+                    <h3>🐾 Explore Tanzania's Wild Kingdom: Your Safari Awaits</h3>
+                    <span class="adventure-intro">
+                        Tanzania is home to some of the most spectacular national parks on Earth—each 
+                        with its own unique landscapes, wildlife, and unforgettable experiences. Discover Africa's 
+                        greatest safari destinations, grouped into three incredible regions:
+                    </span>
+                    <div class="details">
+                        <article>
+                            <h4>🦁 Northern Tanzania - Iconic Landscapes and Legendary Wildlife</h4>
+                            <span class="adventure-description">
+                                The Northern Circuit is Tanzania's most famous safari region, perfect for first-time 
+                                visitors and seasoned explorers alike. Here, you'll find the country's most celebrated parks:
+                            </span>
+                            <p><b>Serengeti National Park:</b> Witness the awe-inspiring <b>Great Migration</b>, where millions of wildebeest and zebras thunder across endless plains under the watchful eyes of lions and cheetahs.</p>
+                            <p><b>Ngorongoro Crater:</b> Explore the world's largest intact volcanic caldera, teeming with wildlife including elephants, rhinos, and flamingos.</p>
+                            <p><b>Lake Manyara National Park:</b> Famous for its tree-climbing lions and diverse birdlife, this park offers stunning views of the Great Rift Valley.</p>
+                            <p><b>Tarangire National Park:</b> Known for its massive elephant herds and iconic baobab trees, Tarangire is a hidden gem with fewer crowds.</p>
+                            <p><b>Arusha National Park:</b> A lesser-known treasure, this park features diverse ecosystems and breathtaking views of Mt. Meru.</p>
+                            <p class="last-para">From sunrise game drives to sundowners overlooking the savannah, Northern Tanzania is the classic safari experience you've always dreamed of.</p>
+
+                            <h4>🐘 Southern Tanzania - Untouched Wilderness and Secluded Adventures</h4>
+                            <span class="adventure-description">
+                                For those seeking a more remote and authentic safari experience, Southern Tanzania offers vast, wild landscapes and fewer tourists. Here, you'll discover:
+                            </span>
+                            <p><b>Ruaha National Park:</b> Tanzania's largest national park, home to immense elephant and buffalo herds, towering baobabs, and excellent predator sightings.</p>
+                            <p><b>Nyerere National Park (Selous Game Reserve):</b> Cruise along the Rufiji River among hippos and crocodiles, or track wild dogs and lions in this UNESCO World Heritage Site.</p>
+                            <p><b>Mikumi National Park:</b> A hidden gem with sweeping grasslands reminiscent of the Serengeti, perfect for spotting giraffes, zebras, and large herds of antelope.</p>
+                            <p class="last-para">Southern Tanzania offers authentic, off-the-beaten-path safaris for those seeking solitude and a deeper connection with nature.</p>
+
+                            <h4>🦍 Western Tanzania - Remote Frontiers and Primate Encounters</h4>
+                            <span class="adventure-description">
+                                For the adventurous at heart, Western Tanzania is a remote frontier where few travelers venture. Here, you can experience:
+                            </span>
+                            <p><b>Katavi National Park:</b> Discover one of Africa's least-visited parks, where vast herds of buffalo and elephants gather, and crocodiles line the drying riverbeds.</p>
+                            <p><b>Mahale Mountains National Park:</b> Trek through lush forests to find wild chimpanzees in their natural habitat, surrounded by stunning views of Lake Tanganyika.</p>
+                            <p><b>Gombe Stream National Park:</b> Famous for Jane Goodall's groundbreaking chimpanzee research, Gombe offers intimate encounters with our closest relatives in a breathtaking setting.</p>
+                            <p class="last-para">Western Tanzania is for those who crave true wilderness and the thrill of discovering Africa's hidden gems.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="adventure-card" id="cityTour">
+                <img src="{% static 'images/adventure/cultural city.jpg' %}" alt="City Tour" loading="lazy"/>
+                <div class="adventure-card-content">
+                    <h3>🕌 Discover Tanzania's Rich Heritage: Cultural City Tours</h3>
+                    <span class="adventure-intro">
+                        Immerse yourself in the vibrant cultures and rich histories of Tanzania's most captivating cities. 
+                        From the ancient streets of Stone Town to the bustling markets of Dar es Salaam, 
+                        these cultural city tours offer a unique glimpse into the heart of Tanzania.
+                    </span>
+
+                    <div class="details">
+                        <article>
+                            <h4>🏛️ Stone Town - Zanzibar's Timeless Crossroads</h4>
+                            <span class="adventure-description">
+                                Wander the labyrinthine alleys of Stone Town, a UNESCO World Heritage Site where 
+                                Swahili, Arab, Persian, and European influences blend seamlessly.
+                            </span>
+                            <p>
+                                Step into the enchanting world of Stone Town, Zanzibar's historic heart and a UNESCO World Heritage Site. 
+                                This ancient trading port is a melting pot of cultures, where Swahili, Arab, Persian, and European influences converge.
+                            </p>
+                            <p>
+                                Explore the narrow alleys lined with intricately carved wooden doors, bustling bazaars, and vibrant markets. 
+                                Visit the iconic House of Wonders, the Old Fort, and the Sultan's Palace to learn about Zanzibar's rich history.
+                            </p>
+                            <p>
+                                Experience the vibrant culture through local cuisine, music, and art. Don't miss the famous Forodhani Gardens night market for delicious street food and stunning sunset views over the Indian Ocean.
+                            </p>
+                            <p class="last-para"> Stone Town is a place where history comes alive, with every corner telling a story of its rich heritage.</p>
+
+                            <h4>🛖 Arusha - Gateway to Safari and Culture</h4>
+                            <span class="adventure-description">
+                                Arusha is not just the gateway to Tanzania's northern safari circuit; it's also a vibrant city rich in culture and history.
+                            </span>
+                            <p>
+                                Nestled at the foot of Mt. Meru, Arusha is a bustling city that serves as the perfect base for your Tanzanian adventures. 
+                                Explore the vibrant markets, visit local art galleries, and learn about the Maasai culture at nearby cultural centers.
+                            </p>
+                            <p>
+                                Take a guided tour to the <b>Arusha Declaration Museum</b> to understand Tanzania's political history, or visit the <b>Natural History Museum</b> to learn about the country's rich biodiversity.
+                            </p>
+                            <p>
+                                Arusha is also a great place to experience local cuisine, with numerous restaurants offering traditional Tanzanian dishes. 
+                                Don't miss the chance to visit a Maasai village for an authentic cultural experience and to learn about their unique way of life.
+                            </p>
+                            <p class="last-para"> Arusha is a city where culture, history, and adventure come together, making it a must-visit destination for any traveler.</p>
+
+                            <h4>🏞️ Tanga - The Hidden Coastal Heritage</h4>
+                            <span class="adventure-description">
+                                Often overlooked, Tanga is a cultural gem on Tanzania's northern coast—offering a perfect blend of history, Swahili culture, and natural beauty.
+                            </span>
+                            <p><b>Explore the ancient ruins of Pangani</b>, once a thriving Arab trade town linked to the slave and spice routes.</p>
+                            <p>Visit the <b>Tanga Heritage Museum</b> to learn about the region's rich history and diverse cultures.</p>
+                            <p><b>Engage with local communities</b> to experience traditional coastal Swahili life, cuisine, and music.</p>
+                            <p>Visit <b>Amboni Caves</b>, East Africa's largest limestone cave system, rich in legends and local beliefs.</p>
+                            <p><b>Stroll through colonial-era streets</b> lined with German and British architecture, a living archive of Tanzania's past.</p>
+                            <p class="last-para"> Tanga is a place where history, culture, and natural beauty intertwine, offering a unique glimpse into Tanzania's coastal heritage.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    {% endblock %}

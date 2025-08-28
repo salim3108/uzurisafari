@@ -1,0 +1,72 @@
+{% extends 'base_testm.html' %}
+
+{% load static %}
+
+    {% block content %} 
+        <section class="main-adventure">
+            <div class="main-adventure-card" id="mountainHiking">
+                <img src="{% static 'images/adventure/mountain hiking.jpg' %}" alt="Mountain Hiking" loading="lazy"/>
+                <div class="main-adventure-card-content">
+                    <h3>🗻 Conquer Tanzania's Majestic Peaks: Mt. Kilimanjaro & Mt. Meru</h3>
+                    <span class="main-adventure-intro">
+                        Experience the thrill of standing atop Africa's highest peaks. 
+                        From the snow-capped summit of Mt. Kilimanjaro to the breathtaking views from Mt. Meru, 
+                        these iconic mountains offer unforgettable adventures for trekkers and climbers.
+                    </span>
+                    <div class="main-details">
+                        <article>
+                            <h4>🌟 Mt. Kilimanjaro - Stand on the Roof of Africa</h4>
+                            <span class="main-adventure-description">
+                                Embark on the adventure of a lifetime as you trek to the summit of <b>Mt. Kilimanjaro</b>, 
+                                Africa's highest peak and one of the world's most iconic mountains.
+                            </span>
+                            <p>
+                                Rising 5,895 meters above sea level, Mt. Kilimanjaro is the highest free-standing mountain in the world—and
+                                one of the most iconic trekking destinations on Earth. From lush rainforests alive with colobus monkeys to the surreal 
+                                beauty of alpine deserts and glaciers, every step of your ascent is a journey through diverse landscapes.
+                            </p>
+                            <p>
+                                Choose from legendary routes like the <b>Machame Route</b> (“Whiskey Route”) for panoramic views, 
+                                or the <b>Marangu Route</b> with comfortable hut accommodations. As you approach the summit at Uhuru Peak, 
+                                the first light of dawn paints the glaciers gold—an unforgettable moment of triumph and wonder.
+                            </p>
+                            <p class="main-last-para"> Whether you're a seasoned climber or a first-time trekker, Kilimanjaro offers an adventure that will challenge your limits and inspire your spirit.</p>
+
+                            <h4>🏔️ Mt. Meru - A Hidden Gem for Adventurers</h4>
+                            <span class="main-adventure-description">
+                                Often overshadowed by its famous neighbor, <b>Mt. Meru</b> offers a challenging yet rewarding trek with stunning views and rich wildlife.
+                            </span>
+                            <p>
+                                Often overlooked yet truly spectacular, <b>Mt. Meru</b> rises gracefully above Arusha National Park to 4,566 meters.This striking volcanic cone 
+                                offers an exhilarating climb through lush forests inhabited by giraffes, buffalo, and diverse birdlife.                        
+                            </p>
+                            <p>
+                                The trek to <b>Meru's crater rim</b> is both challenging and deeply rewarding. As you ascend, you'll witness 
+                                sweeping views over the Rift Valley and Mt. Kilimanjaro floating on the horizon. Sunrise from 
+                                <b>Meru's Socialist Peak</b> bathes the surrounding landscape in warm light, a moment of pure awe.
+                            </p>
+                            <p class="main-last-para"> Mt. Meru is perfect for those seeking a less crowded, more intimate trekking experience with breathtaking scenery and rich wildlife.</p>
+                        </article>
+
+                        <article>
+                            <h4>🌿 Why Hike Kilimanjaro & Meru?</h4>
+
+                            <p>🌄 <b>Incredible Landscapes:</b> Rainforests, alpine deserts, glaciers, and volcanic craters.</p>
+                            <p>🐘 <b>Wildlife Encounters:</b> Unique chance to spot wildlife along the trails.</p>
+                            <p>🗻 <b>Epic Summits:</b> Conquer two of Africa's most stunning peaks.</p>
+                            <p>🧭 <b>Professional Support:</b> Experienced guides and porters ensure safety and comfort</p>
+                            <p>✨ <b>Personal Achievement:</b> A true test of endurance, spirit, and inspiration.</p>
+
+                            <h4>Ready to embark on the adventure of a lifetime?</h4>
+                            <p>Challenge yourself. Discover your strength. Stand above the clouds.</p>
+
+                            <p>Join us for an unforgettable journey to the peaks of Kilimanjaro and Meru, where every step is a testament to your spirit of adventure.</p>
+                            <h3>🗻 Start Your Mountain Adventure Today 🗻</h3>
+
+                        </article>
+                    </div>
+                </div>
+                <a href="{% url 'booking' %}" class="booking-main-adventure-btn">Book Now</a>
+            </div>
+        </section>
+    {% endblock %}

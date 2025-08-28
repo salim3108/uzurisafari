@@ -1,0 +1,159 @@
+{% extends "base_testm.html" %}
+{% load static %}
+
+{% block content %}
+
+<form method="post" action="{% url 'booking' %}">
+    {% csrf_token %}
+
+    <!-- STEP 1 -->
+    <div class="booking-card active" id="step1">
+        <h2>Booking Information</h2>
+
+        <!-- First + Last Name -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="{{ form.firstName.id_for_label }}">First Name</label>
+                {{ form.firstName }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.lastName.id_for_label }}">Last Name</label>
+                {{ form.lastName }}
+            </div>
+        </div>
+
+        <!-- Nationality + Region -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="{{ form.nationality.id_for_label }}">Nationality</label>
+                {{ form.nationality }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.region.id_for_label }}">Region</label>
+                {{ form.region }}
+            </div>
+        </div>
+
+        <!-- Email + Phone -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">Email</label>
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                <div class="phone-input">
+                    <div class="code">
+                        <label for="{{ form.country_code.id_for_label }}">Country Code</label>
+                        {{ form.country_code }}
+                    </div>
+                    <div class="number">
+                        <label for="{{ form.phoneNumber.id_for_label }}">Phone Number</label>
+                        {{ form.phoneNumber }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- City + Postal Code -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="{{ form.city.id_for_label }}">City</label>
+                {{ form.city }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.postal.id_for_label }}">Postal Code</label>
+                {{ form.postal }}
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="{{ form.budget.id_for_label }}">Estimated Budget ($)</label>
+                {{ form.budget }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.days.id_for_label }}">Number of Days</label>
+                {{ form.days }}
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="{{ form.adventure.id_for_label }}">Adventure</label>
+                {{ form.adventure }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.destination.id_for_label }}">Destination</label>
+                {{ form.destination }}
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="{{ form.accommodation_type.id_for_label }}">Accommodation Type</label>
+                {{ form.accommodation_type }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.accommodation_level.id_for_label }}">Accommodation Level</label>
+                {{ form.accommodation_level }}
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="{{ form.departure_date.id_for_label }}">Departure Date</label>
+                {{ form.departure_date }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.arrival_date.id_for_label }}">Arrival Date</label>
+                {{ form.arrival_date }}
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="{{ form.adults.id_for_label }}">Number of Adults</label>
+                {{ form.adults }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.children.id_for_label }}">Number of Children</label>
+                {{ form.children }}
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group" style="flex: 1;">
+                <label for="{{ form.additional_info.id_for_label }}">Additional Information</label>
+                {{ form.additional_info }}
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="buttons btn-book">Book Now</button>
+        </div>
+    </div>
+</form>
+
+<!-- Show validation errors -->
+{% if form.errors %}
+<div class="form-errors">
+    <ul>
+        {% for field in form %}
+            {% for error in field.errors %}
+                <li>{{ field.label }}: {{ error }}</li>
+            {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<script>
+  // Inject Django variable for JSON file location
+  const countriesJsonUrl = "{% static 'js/countries.json' %}";
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+    {% block content %}
+
+        <section class="home-adventures">
+            <h2>Take yourself<br/>Adventure Ideas</h2>
+            <div class="adventures-grid">
+                <div class="adventur-card">
+                    <img src="{% static 'images/zip-line.jpg' %}" alt="Tropical beach adventure experience" loading="lazy">
+                    <h3>Tropical Beach</h3>
+                    <p>Zanzibar and Mafia Island: beaches, reefs, culture, adventure, unforgettable escapes.</p>
+                    <a href="{% url 'beach' %}" class="btn view-adventure-btn">View Adventure</a>
+                </div>
+                <div class="adventur-card">
+                    <img src="{% static 'images/kayaking.jpg' %}" alt="Mountain adventure experience" loading="lazy">
+                    <h3>Mountain Hiking</h3>
+                    <p>Conquer Kilimanjaro and Meru: iconic peaks, stunning views, unforgettable trekking adventures.</p>
+                    <a href="{% url 'hiking' %}" class="btn view-adventure-btn">View Adventure</a>
+                </div>
+                <div class="adventur-card">
+                    <img src="{% static 'images/bungee-jump.jpg' %}" alt="Wildlife safari adventure experience" loading="lazy">
+                    <h3>Wildlife Safari</h3>
+                    <p>Tanzania's parks: unique landscapes, wildlife, safaris across three incredible regions.</p>
+                    <a href="{% url 'safari' %}" class="btn view-adventure-btn">View Adventure</a>
+                </div>
+                <div class="adventur-card">
+                    <img src="{% static 'images/canoeing.jpg' %}" alt="Cultural City Tour adventure experience" loading="lazy">
+                    <h3>Cultural City Tours</h3>
+                    <p>Explore Tanzania's cities: culture, history, markets, and unforgettable cultural tours.</p>
+                    <a href="{% url 'cityTour' %}" class="btn view-adventure-btn">View Adventure</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="call-to-action">
+            <div class="cta-text">
+                <h2>Making Adventure tours, activities affordable.</h2>
+                <p>
+                    Ready to experience the adventure of a lifetime? From the golden beaches of Zanzibar to 
+                    the majestic peaks of Kilimanjaro and the untamed wilderness of Tanzania's national parks, 
+                    your unforgettable journey begins here. Dive into vibrant cultures, discover breathtaking 
+                    landscapes, and create memories that will last forever. Don't wait <b>book your adventure 
+                    today and start exploring the wonders of Tanzania!</b>
+                </p>
+            </div>
+
+            <div class="cta-image">
+                <img src="{% static 'images/adventure.jpg' %}" alt="Adventure Image" loading="lazy">
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-container">
+                <div class="testimonial-slider">
+                    {% if testimonials %}
+                        {% for testimonial in testimonials %}
+                        <div class="testimonial-card">
+                            <div class="card-content">
+                                <img src="{{ testimonial.displayPicture.url }}"  alt="{{ testimonial.fullName }}" class="testimonial-photo" loading="lazy">
+                                <p class="testimonial-text">"{{ testimonial.content }}"</p>
+                                <h4>- {{ testimonial.fullName }}</h4>
+                                <small>{{ testimonial.createdAt|date:"F j, Y" }}</small>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No testimonials available at the moment.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+
+    {% endblock %}

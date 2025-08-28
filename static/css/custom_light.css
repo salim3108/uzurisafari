@@ -1,0 +1,6 @@
+.login-logo img {
+    max-width: 120px; /* adjust width as needed */
+    height: auto;
+    display: block;
+    margin: 0 auto 20px; /* center and add spacing below */
+}

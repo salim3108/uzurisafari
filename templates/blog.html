@@ -1,0 +1,29 @@
+{% extends 'base_testm.html' %}
+
+{% load static %}
+
+    {% block content %}
+        <section class="blog-section">
+            <h2 class="section-title">📰 Latest Blog Posts</h2>
+            <div class="blog-grid">
+                {% for post in posts %}
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="{{ post.image.url }}" alt="{{ post.title}}" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-meta">{{ post.date_posted|date:"F j, Y" }} • By {{ post.author }}</span>
+                        <h3 class="blog-title">{{ post.title }}</h3>
+                        <p class="blog-excerpt">
+                            {{ post.summary|truncatewords:30 }}
+                        </p>
+                        <div class="blog-footer">
+                             <a href="{% url 'blog_post' slug=post.slug %}" class="blog-readmore">Read More ...</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+    {% endblock %}

@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="{% static 'images/favicon_io/favicon-32x32.png' %}" type="image/x-icon">
+    <title>Uzuri Safaris</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="{% static 'images/logo/uzuri-logo.png' %}" alt="Uzuri Safaris Logo" style="height:40px;" loading="lazy">
+            </div>
+            <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false" aria-controls="navMenu">&#9776;</button>
+            <nav id="navMenu" class="nav-links">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'adventure' %}">Adventures</a>
+                <a href="{% url 'blog' %}">Blog</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a class="booking-btn" href="{% url 'booking' %}">Book Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p>Discover the</p>
+                <h1>Adventure Travel</h1>
+                <p>Your best Adventure Deals with nature</p>
+                <a href="{% url 'adventure' %}" class="btn">View Adventures</a>
+            </div>
+        </section>
+
+        {% block content%}
+
+        
+        {% endblock %}
+    </main>
+
+    <footer>
+        All rights reserved. &#x2665; Designed and developed by 
+        <a href="https://www.fasilium.co.tz" target="_blank">Fasilium</a>.
+    </footer>
+
+    <script src="{% static 'js/index.js' %}" defer></script>
+</body>
+</html>

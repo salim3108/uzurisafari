@@ -1,0 +1,67 @@
+{% extends 'base_testm.html' %}
+
+{% load static %}
+
+    {% block content %} 
+        <section class="main-adventure">
+            <div class="main-adventure-card" id="Safari">
+                <img src="{% static 'images/adventure/wildlife safari.jpg' %}" alt="Wildlife Safari" loading="lazy"/>
+                <div class="main-adventure-card-content">
+                    <h3>🐾 Explore Tanzania's Wild Kingdom: Your Safari Awaits</h3>
+                    <span class="main-adventure-intro">
+                        Tanzania is home to some of the most spectacular national parks on Earth—each 
+                        with its own unique landscapes, wildlife, and unforgettable experiences. Discover Africa's 
+                        greatest safari destinations, grouped into three incredible regions:
+                    </span>
+                    <div class="main-details">
+                        <article>
+                            <h4>🦁 Northern Tanzania - Iconic Landscapes and Legendary Wildlife</h4>
+                            <span class="main-adventure-description">
+                                The Northern Circuit is Tanzania's most famous safari region, perfect for first-time 
+                                visitors and seasoned explorers alike. Here, you'll find the country's most celebrated parks:
+                            </span>
+                            <p><b>Serengeti National Park:</b> Witness the awe-inspiring <b>Great Migration</b>, where millions of wildebeest and zebras thunder across endless plains under the watchful eyes of lions and cheetahs.</p>
+                            <p><b>Ngorongoro Crater:</b> Explore the world's largest intact volcanic caldera, teeming with wildlife including elephants, rhinos, and flamingos.</p>
+                            <p><b>Lake Manyara National Park:</b> Famous for its tree-climbing lions and diverse birdlife, this park offers stunning views of the Great Rift Valley.</p>
+                            <p><b>Tarangire National Park:</b> Known for its massive elephant herds and iconic baobab trees, Tarangire is a hidden gem with fewer crowds.</p>
+                            <p><b>Arusha National Park:</b> A lesser-known treasure, this park features diverse ecosystems and breathtaking views of Mt. Meru.</p>
+                            <p class="main-last-para">From sunrise game drives to sundowners overlooking the savannah, Northern Tanzania is the classic safari experience you've always dreamed of.</p>
+
+                            <h4>🐘 Southern Tanzania - Untouched Wilderness and Secluded Adventures</h4>
+                            <span class="main-adventure-description">
+                                For those seeking a more remote and authentic safari experience, Southern Tanzania offers vast, wild landscapes and fewer tourists. Here, you'll discover:
+                            </span>
+                            <p><b>Ruaha National Park:</b> Tanzania's largest national park, home to immense elephant and buffalo herds, towering baobabs, and excellent predator sightings.</p>
+                            <p><b>Nyerere National Park (Selous Game Reserve):</b> Cruise along the Rufiji River among hippos and crocodiles, or track wild dogs and lions in this UNESCO World Heritage Site.</p>
+                            <p><b>Mikumi National Park:</b> A hidden gem with sweeping grasslands reminiscent of the Serengeti, perfect for spotting giraffes, zebras, and large herds of antelope.</p>
+                            <p class="main-last-para">Southern Tanzania offers authentic, off-the-beaten-path safaris for those seeking solitude and a deeper connection with nature.</p>
+
+                            <h4>🦍 Western Tanzania - Remote Frontiers and Primate Encounters</h4>
+                            <span class="main-adventure-description">
+                                For the adventurous at heart, Western Tanzania is a remote frontier where few travelers venture. Here, you can experience:
+                            </span>
+                            <p><b>Katavi National Park:</b> Discover one of Africa's least-visited parks, where vast herds of buffalo and elephants gather, and crocodiles line the drying riverbeds.</p>
+                            <p><b>Mahale Mountains National Park:</b> Trek through lush forests to find wild chimpanzees in their natural habitat, surrounded by stunning views of Lake Tanganyika.</p>
+                            <p><b>Gombe Stream National Park:</b> Famous for Jane Goodall's groundbreaking chimpanzee research, Gombe offers intimate encounters with our closest relatives in a breathtaking setting.</p>
+                            <p class="main-last-para">Western Tanzania is for those who crave true wilderness and the thrill of discovering Africa's hidden gems.</p>
+                        </article>
+
+                        <article>
+                            <h4>🌿 Why Choose a Tanzanian Safari?</h4>
+                            <p>🦓 <b>Unparalleled Diversity:</b> From the Big Five to rare primates and vast migrations.</p>
+                            <p>🌍 <b>Spectacular Landscapes:</b> Endless plains, volcanic craters, riverine forests, and remote mountains.</p>
+                            <p>✨ <b>Authentic Experiences:</b> Expert guides, cultural encounters with Maasai communities, and unforgettable moments under the African stars.</p>
+
+                            <h4>Ready to begin your journey into the wild?</h4>
+                            <p>Explore. Discover. Be Inspired.</p>
+
+                            <p>Join us for an unforgettable safari adventure in Tanzania, where every day brings new wonders and every moment is a chance to connect with the wild.</p>
+                            <h3>🐾 Plan Your Tanzania Safari Today 🐾</h3>
+                        </article>
+                    </div>
+                </div>
+                <a href="{% url 'booking' %}" class="booking-main-adventure-btn">Book Now</a>
+
+            </div>
+        </section>
+    {% endblock %}

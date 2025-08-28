@@ -1,0 +1,30 @@
+{% extends "base_testm.html" %}
+
+    {% block title %}Add Testimonial{% endblock %}
+
+        {% block content %}
+        <section class="testimonial-form-section">
+            <div class="testimonial-form-container">
+                <h2>Submit Your Testimonial</h2>
+                <p>We value your feedback! Please share your experience with us.</p>
+          
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                        {{ message }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                <div>
+                    <form method="post" id="testimonialForm" enctype="multipart/form-data" class="testimonial-form">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                    </form>
+                    <button type="submit" form="testimonialForm" class="submit-testimonial-btn">Submit Testimonial</button>
+                </div>
+            </div>
+        </section>
+        {% endblock %}

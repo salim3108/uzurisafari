@@ -1,0 +1,87 @@
+{% extends 'base_testm.html' %}
+
+{% load static %}
+
+    {% block content %} 
+        <section class="main-adventure">
+            <div class="main-adventure-card" id="cityTour">
+                <img src="{% static 'images/adventure/cultural city.jpg' %}" alt="City Tour" loading="lazy"/>
+                <div class="main-adventure-card-content">
+                    <h3>🕌 Discover Tanzania's Rich Heritage: Cultural City Tours</h3>
+                    <span class="main-adventure-intro">
+                        Immerse yourself in the vibrant cultures and rich histories of Tanzania's most captivating cities. 
+                        From the ancient streets of Stone Town to the bustling markets of Dar es Salaam, 
+                        these cultural city tours offer a unique glimpse into the heart of Tanzania.
+                    </span>
+
+                    <div class="main-details">
+                        <article>
+                            <h4>🏛️ Stone Town - Zanzibar's Timeless Crossroads</h4>
+                            <span class="main-adventure-description">
+                                Wander the labyrinthine alleys of Stone Town, a UNESCO World Heritage Site where 
+                                Swahili, Arab, Persian, and European influences blend seamlessly.
+                            </span>
+                            <p>
+                                Step into the enchanting world of Stone Town, Zanzibar's historic heart and a UNESCO World Heritage Site. 
+                                This ancient trading port is a melting pot of cultures, where Swahili, Arab, Persian, and European influences converge.
+                            </p>
+                            <p>
+                                Explore the narrow alleys lined with intricately carved wooden doors, bustling bazaars, and vibrant markets. 
+                                Visit the iconic House of Wonders, the Old Fort, and the Sultan's Palace to learn about Zanzibar's rich history.
+                            </p>
+                            <p>
+                                Experience the vibrant culture through local cuisine, music, and art. Don't miss the famous Forodhani Gardens night market for delicious street food and stunning sunset views over the Indian Ocean.
+                            </p>
+                            <p class="main-last-para"> Stone Town is a place where history comes alive, with every corner telling a story of its rich heritage.</p>
+
+                            <h4>🛖 Arusha - Gateway to Safari and Culture</h4>
+                            <span class="main-adventure-description">
+                                Arusha is not just the gateway to Tanzania's northern safari circuit; it's also a vibrant city rich in culture and history.
+                            </span>
+                            <p>
+                                Nestled at the foot of Mt. Meru, Arusha is a bustling city that serves as the perfect base for your Tanzanian adventures. 
+                                Explore the vibrant markets, visit local art galleries, and learn about the Maasai culture at nearby cultural centers.
+                            </p>
+                            <p>
+                                Take a guided tour to the <b>Arusha Declaration Museum</b> to understand Tanzania's political history, or visit the <b>Natural History Museum</b> to learn about the country's rich biodiversity.
+                            </p>
+                            <p>
+                                Arusha is also a great place to experience local cuisine, with numerous restaurants offering traditional Tanzanian dishes. 
+                                Don't miss the chance to visit a Maasai village for an authentic cultural experience and to learn about their unique way of life.
+                            </p>
+                            <p class="main-last-para"> Arusha is a city where culture, history, and adventure come together, making it a must-visit destination for any traveler.</p>
+
+                            <h4>🏞️ Tanga - The Hidden Coastal Heritage</h4>
+                            <span class="main-adventure-description">
+                                Often overlooked, Tanga is a cultural gem on Tanzania's northern coast—offering a perfect blend of history, Swahili culture, and natural beauty.
+                            </span>
+                            <p><b>Explore the ancient ruins of Pangani</b>, once a thriving Arab trade town linked to the slave and spice routes.</p>
+                            <p>Visit the <b>Tanga Heritage Museum</b> to learn about the region's rich history and diverse cultures.</p>
+                            <p><b>Engage with local communities</b> to experience traditional coastal Swahili life, cuisine, and music.</p>
+                            <p>Visit <b>Amboni Caves</b>, East Africa's largest limestone cave system, rich in legends and local beliefs.</p>
+                            <p><b>Stroll through colonial-era streets</b> lined with German and British architecture, a living archive of Tanzania's past.</p>
+                            <p class="main-last-para"> Tanga is a place where history, culture, and natural beauty intertwine, offering a unique glimpse into Tanzania's coastal heritage.</p>
+                        </article>
+                    
+                        <article>
+                            <h4>🌍 Why Choose a Cultural City Tours?</h4>
+
+                            <p>🕌 <b>Rich Heritage:</b> Explore UNESCO World Heritage Sites and ancient trading ports.</p>
+                            <p>🎨 <b>Cultural Immersion:</b> Experience local traditions, cuisine, and art.</p>
+                            <p>🧭 <b>Expert Local Guides:</b> Travel with storytellers who bring history and culture to life.</p>
+                            <p>🌅 <b>Stunning Landscapes:</b> Discover cities set against breathtaking backdrops.</p>
+                            <p>🤝 <b>Authentic Encounters:</b> Meet local artisans, musicians, and community members.</p>
+
+                            <h4>Ready to explore Tanzania's cultural treasures?</h4>
+                            <p>Discover. Connect. Be Inspired.</p>
+
+                            <p>Join us for an unforgettable journey through Tanzania's vibrant cities, where every step reveals a new facet of the country's rich cultural tapestry.</p>
+                            <h3>🕌 Plan Your Cultural City Tour Today 🕌</h3>
+                        </article>
+                    </div>
+                </div>
+                <a href="{% url 'booking' %}" class="booking-main-adventure-btn">Book Now</a>
+
+            </div>
+        </section>
+    {% endblock %}

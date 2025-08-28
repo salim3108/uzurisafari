@@ -1,0 +1,22 @@
+{% extends 'base_testm.html' %}
+
+{% load static %}
+
+    {% block content %}
+
+        <section class="blog-detail-section">
+            <div class="blog-detail-card">
+                <img class="blog-detail-image" src="{{ post.image.url }}" alt="{{ post.title }}" loading="lazy">
+                <div class="blog-detail-content">
+                    <h1>{{ post.title }}</h1>
+                    <p class="blog-meta">{{ post.date_posted|date:"F j, Y" }} • By {{ post.author }}</p>
+                    <div class="blog-full-content">
+                        {{ post.excerpt |safe }}
+                    </div>
+                    <a href="{% url 'blog' %}" class="back-to-blog">← Back to Blog</a>
+                </div>
+            </div>
+        </section>
+
+
+    {% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base_testm.html" %}
+
+{% block title %}Add Member{% endblock %}
+
+{% block content %}
+    <section class="add-member-section">
+        <div class="add-member-container">
+            <h2>Add New Member</h2>
+            <p>Please fill out the form below to add a new member.</p>
+
+            <form method="post" id="addMemberForm" enctype="multipart/form-data" class="add-member-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </form>
+            <button type="submit" form="addMemberForm" class="submit-member-btn">Add Member</button>
+        </div>
+    </section>
+
+    <!-- Hidden container to store message -->
+    {% if messages %}
+        <div id="django-messages" style="display: none;">
+            {% for message in messages %}
+                <div class="message {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+{% endblock %}

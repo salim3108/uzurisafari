@@ -1,0 +1,73 @@
+{% extends 'base_testm.html' %}
+
+{% load static %}
+
+    {% block content %} 
+        <section class="main-adventure">
+            <div class="main-adventure-card" id="beachAdventure">
+                <img src="{% static 'images/adventure/beach.jpg' %}" alt="Beach Adventure" loading="lazy"/>
+                <div class="main-adventure-card-content">
+                    <h3>🌴 Discover Paradise: Zanzibar & Mafia Island Beach Escapes</h3>
+                    <span class="main-adventure-intro">
+                        Escape to the idyllic shores of Zanzibar and Mafia Island, where sun-kissed beaches, 
+                        vibrant coral reefs, and rich cultural heritage await. Whether you seek adventure or relaxation, 
+                        these tropical gems offer unforgettable experiences.
+                    </span>
+                    <div class="main-details">
+                        <article>
+                            <h4>✨ Zanzibar - The Spice Island's Coastal Magic</h4>
+                            <span class="main-adventure-description">
+                                Zanzibar, known as the Spice Island, is a tropical paradise with stunning beaches, rich culture, and vibrant marine life.
+                                Experience the perfect blend of relaxation and adventure in this enchanting destination.
+                            </span>
+                            <p>
+                                Spend your days snorkeling vibrant coral reefs in Mnemba Atoll, swimming alongside 
+                                colorful marine life, or kite surfing along the breezy east coast. As evening falls,
+                                unwind with fresh seafood under a canopy of stars, with the soothing sound of waves completing your perfect day.
+                            </p>
+                            <p>
+                                Step onto the sun-kissed shores of Zanzibar, where powdery white sands meet the shimmering 
+                                turquoise Indian Ocean. From the vibrant cultural heartbeat of Stone Town to the tranquil 
+                                beaches of Nungwi and Paje, Zanzibar is a tropical dream come true.
+                            </p>
+                            <p class="main-last-para"> Discover Stone Town's winding alleys, vibrant markets, and historic architecture. Visit spice plantations to experience Zanzibar's aromatic heritage.</p>
+
+                            <h4>🌊 Mafia Island - Tanzania's Hidden Marine Paradise</h4>
+                            <span class="main-adventure-description">
+                                Venture to Mafia Island, a hidden gem known for its pristine beaches and incredible marine biodiversity.
+                                Experience the untouched beauty of this tranquil paradise.
+                            </span>
+                            <p>
+                                For a more secluded and authentic experience, discover Mafia Island—a pristine haven where 
+                                nature thrives and time slows down. Home to the Mafia Island Marine Park, this unspoiled sanctuary offers extraordinary 
+                                diving and snorkeling among thriving coral gardens, sea turtles, and playful dolphins.
+                            </p>
+                            <p>
+                                Between October and March, don't miss the unforgettable opportunity to swim with majestic 
+                                whale sharks, the gentle giants of the ocean. Explore Chole Bay by traditional dhow, 
+                                relax on deserted sandbanks, and immerse yourself in the warm hospitality of island life.
+                            </p>
+                            <p class="main-last-para"> Mafia Island is a paradise for divers and snorkelers, with vibrant coral reefs and abundant marine life.</p>
+                        </article>
+                        <article>
+                            <h4>🐠 Why Visit Zanzibar & Mafia Island?</h4>
+
+                            <p><b>Breathtaking Beaches:</b> Powder-soft sands and crystal-clear waters.</p>
+                            <p><b>World-Class Diving:</b> Vibrant reefs and marine life like nowhere else.</p>
+                            <p><b>Authentic Culture:</b> Rich Swahili heritage and local traditions.</p>
+                            <p><b>Unforgettable Experiences:</b> Whale shark encounters, dhow cruises, and sunset dinners.</p>
+                            <p><b>Pure Relaxation:</b> Idyllic settings perfect for rejuvenation.</p>
+
+                            <h4>Ready to experience the best of Tanzania's coast?</h4>
+                            <p>Explore. Discover. Unwind.</p>
+
+                            <p>Join us for an unforgettable journey to Zanzibar and Mafia Island, where every moment is a postcard-perfect memory waiting to be made.</p>
+                            <h3>🌴 Plan Your Adventure Today 🌴</h3>
+                        </article>
+                    </div>
+                </div>
+                <a href="{% url 'booking' %}" class="booking-main-adventure-btn">Book Now</a>
+
+            </div>
+        </section>
+    {% endblock %}
