@@ -148,6 +148,7 @@ class BookingForm(forms.ModelForm):
         widgets = {
             'firstName': forms.TextInput(attrs={'placeholder': 'First'}),
             'lastName': forms.TextInput(attrs={'placeholder': 'Last'}),
+             
             'region': forms.TextInput(attrs={'placeholder': 'Your region'}),
             'email': forms.EmailInput(attrs={'placeholder': 'Enter your email'}),
             'city': forms.TextInput(attrs={'placeholder': 'Your city'}),
