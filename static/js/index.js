@@ -19,31 +19,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Testimonial slider functionality
 document.addEventListener("DOMContentLoaded", function () {
-  const slider = document.querySelector(".testimonial-slider");
-  const cards = document.querySelectorAll(".testimonial-card");
-  let index = 0;
-  const visibleCards = 3; // Show 3 at a time
+  const teamSlider = document.querySelector(".testimonial-slider");
+  const teamCards = document.querySelectorAll(".testimonial-card");
+  let teamIndex = 0;
 
-  function showNextTestimonial() {
-    index++;
-    if (index > cards.length - visibleCards) {
-      index = 0; // reset when reaching the end
-    }
-    slider.style.transform = `translateX(-${index * (100 / visibleCards)}%)`;
+  function getVisibleCards() {
+    if (window.innerWidth <= 480) return 1;  // mobile
+    if (window.innerWidth <= 768) return 2;  // tablet
+    return 3; // desktop
   }
 
-  // Auto-slide every 4 seconds
-  setInterval(showNextTestimonial, 4000);
-});
-
-// Team slider functionality
-document.addEventListener("DOMContentLoaded", function () {
-  const teamSlider = document.querySelector(".team-slider");
-  const teamCards = document.querySelectorAll(".team-card");
-  let teamIndex = 0;
-  const visibleCards = 3; // Show 3 at a time
-
   function showNextTeam() {
+    const visibleCards = getVisibleCards();
     teamIndex++;
     if (teamIndex > teamCards.length - visibleCards) {
       teamIndex = 0; // reset when reaching the end
@@ -53,7 +40,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Auto-slide every 4 seconds
   setInterval(showNextTeam, 4000);
+
+  // Recalculate on window resize
+  window.addEventListener("resize", () => {
+    teamIndex = 0; // reset position on resize
+    teamSlider.style.transform = "translateX(0)";
+  });
 });
+
+
+// Team slider functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const teamSlider = document.querySelector(".team-slider");
+  const teamCards = document.querySelectorAll(".team-card");
+  let teamIndex = 0;
+
+  function getVisibleCards() {
+    if (window.innerWidth <= 480) return 1;  // mobile
+    if (window.innerWidth <= 768) return 2;  // tablet
+    return 3; // desktop
+  }
+
+  function showNextTeam() {
+    const visibleCards = getVisibleCards();
+    teamIndex++;
+    if (teamIndex > teamCards.length - visibleCards) {
+      teamIndex = 0; // reset when reaching the end
+    }
+    teamSlider.style.transform = `translateX(-${teamIndex * (100 / visibleCards)}%)`;
+  }
+
+  // Auto-slide every 4 seconds
+  setInterval(showNextTeam, 4000);
+
+  // Recalculate on window resize
+  window.addEventListener("resize", () => {
+    teamIndex = 0; // reset position on resize
+    teamSlider.style.transform = "translateX(0)";
+  });
+});
+
 
 function showToast(message) {
     const toast = document.createElement("div");

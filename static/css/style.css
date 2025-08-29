@@ -541,11 +541,15 @@ section.call-to-action {
 }
 
 /* Responsive adjustments */
-@media (max-width: 600px) {
-  .testimonial-card {
-    min-width: 80%;
-    max-width: 80%;
-    margin: 0 0.5rem;
+@media (max-width: 768px) {
+  .team-card {
+    flex: 0 0 50%; /* 2 per row on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .team-card {
+    flex: 0 0 100%; /* 1 per row on mobile */
   }
 }
 
@@ -710,11 +714,15 @@ section.call-to-action {
   bottom: 50px;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .team-member {
-    flex: 0 0 80%;
-    margin: 0 0.5rem;
+@media (max-width: 768px) {
+  .team-card {
+    flex: 0 0 50%; /* 2 per row on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .team-card {
+    flex: 0 0 100%; /* 1 per row on mobile */
   }
 }
 
