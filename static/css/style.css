@@ -542,13 +542,13 @@ section.call-to-action {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .team-card {
+  .testimonial-card {
     flex: 0 0 50%; /* 2 per row on tablets */
   }
 }
 
 @media (max-width: 480px) {
-  .team-card {
+  .testimonial-card {
     flex: 0 0 100%; /* 1 per row on mobile */
   }
 }
