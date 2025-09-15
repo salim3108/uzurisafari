@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load static %}
+{% load static image_filters %}
 
     {% block content %}
 
@@ -8,25 +8,25 @@
             <h2>Take yourself<br/>Adventure Ideas</h2>
             <div class="adventures-grid">
                 <div class="adventur-card">
-                    <img src="{% static 'images/zip-line.jpg' %}" alt="Tropical beach adventure experience" loading="lazy">
+                    <img src="{% webp_static 'images/zip-line.jpg' %}" alt="Tropical beach adventure experience" loading="lazy">
                     <h3>Tropical Beach</h3>
                     <p>Zanzibar and Mafia Island: beaches, reefs, culture, adventure, unforgettable escapes.</p>
                     <a href="{% url 'beach' %}" class="btn view-adventure-btn">View Adventure</a>
                 </div>
                 <div class="adventur-card">
-                    <img src="{% static 'images/kayaking.jpg' %}" alt="Mountain adventure experience" loading="lazy">
+                    <img src="{% webp_static 'images/kayaking.jpg' %}" alt="Mountain adventure experience" loading="lazy">
                     <h3>Mountain Hiking</h3>
                     <p>Conquer Kilimanjaro and Meru: iconic peaks, stunning views, unforgettable trekking adventures.</p>
                     <a href="{% url 'hiking' %}" class="btn view-adventure-btn">View Adventure</a>
                 </div>
                 <div class="adventur-card">
-                    <img src="{% static 'images/bungee-jump.jpg' %}" alt="Wildlife safari adventure experience" loading="lazy">
+                    <img src="{% webp_static 'images/bungee-jump.jpg' %}" alt="Wildlife safari adventure experience" loading="lazy">
                     <h3>Wildlife Safari</h3>
                     <p>Tanzania's parks: unique landscapes, wildlife, safaris across three incredible regions.</p>
                     <a href="{% url 'safari' %}" class="btn view-adventure-btn">View Adventure</a>
                 </div>
                 <div class="adventur-card">
-                    <img src="{% static 'images/canoeing.jpg' %}" alt="Cultural City Tour adventure experience" loading="lazy">
+                    <img src="{% webp_static 'images/canoeing.jpg' %}" alt="Cultural City Tour adventure experience" loading="lazy">
                     <h3>Cultural City Tours</h3>
                     <p>Explore Tanzania's cities: culture, history, markets, and unforgettable cultural tours.</p>
                     <a href="{% url 'cityTour' %}" class="btn view-adventure-btn">View Adventure</a>
@@ -47,7 +47,7 @@
             </div>
 
             <div class="cta-image">
-                <img src="{% static 'images/adventure.jpg' %}" alt="Adventure Image" loading="lazy">
+                <img src="{% webp_static 'images/adventure.jpg' %}" alt="Adventure Image" loading="lazy">
             </div>
         </section>
 
@@ -61,7 +61,7 @@
                             <div class="card-content">
                                 <picture>
                                     <source srcset="{{ testimonial.displayPicture.url }}" type="image/webp">
-                                    <img class="blog-detail-image" src="{{ testimonial.displayPicture.url }}" alt="{{ testimonial.fullName }}" class="testimonial-photo" loading="lazy">
+                                    <img src="{{ testimonial.displayPicture.url }}" alt="{{ testimonial.fullName }}" class="testimonial-photo" loading="lazy">
                                 </picture>
                                 <p class="testimonial-text">"{{ testimonial.content }}"</p>
                                 <h4>- {{ testimonial.fullName }}</h4>

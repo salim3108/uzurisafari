@@ -1,11 +1,11 @@
 {% extends 'base_testm.html' %}
 
-{% load static %}
+{% load static image_filters %}
 
     {% block content %} 
         <section class="main-adventure">
             <div class="main-adventure-card" id="beachAdventure">
-                <img src="{% static 'images/adventure/beach.jpg' %}" alt="Beach Adventure" loading="lazy"/>
+                <img src="{% webp_static 'images/adventure/beach.jpg' %}" alt="Beach Adventure" loading="lazy"/>
                 <div class="main-adventure-card-content">
                     <h3>🌴 Discover Paradise: Zanzibar & Mafia Island Beach Escapes</h3>
                     <span class="main-adventure-intro">

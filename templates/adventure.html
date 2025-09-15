@@ -1,11 +1,11 @@
 {% extends 'base_testm.html' %}
 
-{% load static %}
+{% load static  image_filters %}
 
     {% block content %} 
         <section class="adventures">
             <div class="adventure-card" id="beachAdventure">
-                <img src="{% static 'images/adventure/beach.jpg' %}" alt="Beach Adventure" loading="lazy"/>
+                <img src="{% webp_static 'images/adventure/beach.jpg' %}" alt="Beach Adventure" loading="lazy"/>
                 <div class="adventure-card-content">
                     <h3>🌴 Discover Paradise: Zanzibar & Mafia Island Beach Escapes</h3>
                     <span class="adventure-intro">
@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="adventure-card" id="mountainHiking">
-                <img src="{% static 'images/adventure/mountain hiking.jpg' %}" alt="Mountain Hiking" loading="lazy"/>
+                <img src="{% webp_static 'images/adventure/mountain hiking.jpg' %}" alt="Mountain Hiking" loading="lazy"/>
                 <div class="adventure-card-content">
                     <h3>🗻 Conquer Tanzania's Majestic Peaks: Mt. Kilimanjaro & Mt. Meru</h3>
                     <span class="adventure-intro">
@@ -99,7 +99,7 @@
                 </div>
             </div>
             <div class="adventure-card" id="safari">
-                <img src="{% static 'images/adventure/wildlife safari.jpg' %}" alt="Safari" loading="lazy"/>
+                <img src="{% webp_static 'images/adventure/wildlife safari.jpg' %}" alt="Safari" loading="lazy"/>
                 <div class="adventure-card-content">
                     <h3>🐾 Explore Tanzania's Wild Kingdom: Your Safari Awaits</h3>
                     <span class="adventure-intro">
@@ -143,7 +143,7 @@
                 </div>
             </div>
             <div class="adventure-card" id="cityTour">
-                <img src="{% static 'images/adventure/cultural city.jpg' %}" alt="City Tour" loading="lazy"/>
+                <img src="{% webp_static 'images/adventure/cultural city.jpg' %}" alt="City Tour" loading="lazy"/>
                 <div class="adventure-card-content">
                     <h3>🕌 Discover Tanzania's Rich Heritage: Cultural City Tours</h3>
                     <span class="adventure-intro">

@@ -1,6 +1,6 @@
 {% extends 'base_testm.html' %}
 
-{% load static %}
+{% load static image_filters  %}
 
     {% block content %}
         <section class="about-sections">
@@ -28,7 +28,7 @@
 
                 </div>
                 <div class="about-image">
-                    <img src="{% static 'images/beach.jpg' %}" alt="Our Team on Adventure" loading="lazy"/>
+                    <img src="{% webp_static 'images/beach.jpg' %}" alt="Our Team on Adventure" loading="lazy"/>
                 </div>
             </div>
         </section>
@@ -70,7 +70,7 @@
                             <div class="card-content">
                                 <picture>
                                     <source srcset="{{ member.displayPicture.url }}" type="image/webp">
-                                    <img class="blog-detail-image" src="{{ member.displayPicture.url }}" alt="{{ member.full_name }}" class="team-photo" loading="lazy">
+                                    <img src="{{ member.displayPicture.url }}" alt="{{ member.full_name }}" class="team-photo" loading="lazy">
                                 </picture>
                                 <h4>{{ member.fullName }}</h4>
                                 <p class="position">{{ member.position }}</p>

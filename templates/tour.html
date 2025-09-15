@@ -1,11 +1,11 @@
 {% extends 'base_testm.html' %}
 
-{% load static %}
+{% load static image_filters %}
 
     {% block content %} 
         <section class="main-adventure">
             <div class="main-adventure-card" id="cityTour">
-                <img src="{% static 'images/adventure/cultural city.jpg' %}" alt="City Tour" loading="lazy"/>
+                <img src="{% webp_static 'images/adventure/cultural city.jpg' %}" alt="City Tour" loading="lazy"/>
                 <div class="main-adventure-card-content">
                     <h3>🕌 Discover Tanzania's Rich Heritage: Cultural City Tours</h3>
                     <span class="main-adventure-intro">

@@ -1,11 +1,11 @@
 {% extends 'base_testm.html' %}
 
-{% load static %}
+{% load static image_filters %}
 
     {% block content %} 
         <section class="main-adventure">
             <div class="main-adventure-card" id="Safari">
-                <img src="{% static 'images/adventure/wildlife safari.jpg' %}" alt="Wildlife Safari" loading="lazy"/>
+                <img src="{% webp_static 'images/adventure/wildlife safari.jpg' %}" alt="Wildlife Safari" loading="lazy"/>
                 <div class="main-adventure-card-content">
                     <h3>🐾 Explore Tanzania's Wild Kingdom: Your Safari Awaits</h3>
                     <span class="main-adventure-intro">
