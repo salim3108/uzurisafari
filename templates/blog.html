@@ -9,7 +9,10 @@
                 {% for post in posts %}
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="{{ post.image.url }}" alt="{{ post.title}}" loading="lazy">
+                        <picture>
+                            <source srcset="{{ post.blogImage.url }}" type="image/webp">
+                            <img class="blog-detail-image" src="{{ post.blogImage.url }}" alt="{{ post.title }}" loading="lazy">
+                        </picture>
                     </div>
                     <div class="blog-content">
                         <span class="blog-meta">{{ post.date_posted|date:"F j, Y" }} • By {{ post.author }}</span>

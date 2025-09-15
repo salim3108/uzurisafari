@@ -2,6 +2,8 @@ from django.db import models
 from django.utils.text import slugify
 import uuid
 import random
+from PIL import Image
+import os
 from tinymce.models import HTMLField
 from django.contrib.auth.models import User
 from django_countries.fields import CountryField
@@ -20,6 +22,23 @@ class Testimonial(models.Model):
     def __str__(self):
         return self.fullName
     
+    
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        # Path of uploaded file
+        img_path = self.displayPicture.path
+        img = Image.open(img_path)
+
+        # Convert only if it's JPG/PNG
+        if img.format in ["JPEG", "JPG", "PNG"]:
+            webp_path = os.path.splitext(img_path)[0] + ".webp"
+            img.save(webp_path, "webp", quality=80)
+
+            # Optionally: replace original with WebP
+            self.displayPicture.name = os.path.splitext(self.displayPicture.name)[0] + ".webp"
+            super().save(update_fields=["displayPicture"])
+    
 
 
 class Department(models.Model):
@@ -34,10 +53,26 @@ class staffMember(models.Model):
     position = models.CharField(max_length=100)
     biography = models.TextField(null=True, blank=True)
     department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True, blank=True)
-    profilePicture = models.ImageField(upload_to='team/')
+    displayPicture = models.ImageField(upload_to='team/')
 
     def __str__(self):
         return self.fullName
+    
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        # Path of uploaded file
+        img_path = self.displayPicture.path
+        img = Image.open(img_path)
+
+        # Convert only if it's JPG/PNG
+        if img.format in ["JPEG", "JPG", "PNG"]:
+            webp_path = os.path.splitext(img_path)[0] + ".webp"
+            img.save(webp_path, "webp", quality=80)
+
+            # Optionally: replace original with WebP
+            self.displayPicture.name = os.path.splitext(self.displayPicture.name)[0] + ".webp"
+            super().save(update_fields=["displayPicture"])
     
 
 class Booking(models.Model):
@@ -80,8 +115,9 @@ class BlogPost(models.Model):
     author = models.ForeignKey(staffMember, on_delete=models.CASCADE)
     summary = models.CharField(max_length=435, blank=True, null=True, )
     date_posted = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='blog_images/')
+    blogImage = models.ImageField(upload_to='blog_images/')
     excerpt = HTMLField()
+
 
     def save(self, *args, **kwargs):
         if not self.slug: 
@@ -98,3 +134,20 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        # Path of uploaded file
+        img_path = self.blogImage.path
+        img = Image.open(img_path)
+
+        # Convert only if it's JPG/PNG
+        if img.format in ["JPEG", "JPG", "PNG"]:
+            webp_path = os.path.splitext(img_path)[0] + ".webp"
+            img.save(webp_path, "webp", quality=80)
+
+            # Optionally: replace original with WebP
+            self.blogImage.name = os.path.splitext(self.blogImage.name)[0] + ".webp"
+            super().save(update_fields=["blogImage"])

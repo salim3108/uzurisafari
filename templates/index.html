@@ -59,7 +59,10 @@
                         {% for testimonial in testimonials %}
                         <div class="testimonial-card">
                             <div class="card-content">
-                                <img src="{{ testimonial.displayPicture.url }}"  alt="{{ testimonial.fullName }}" class="testimonial-photo" loading="lazy">
+                                <picture>
+                                    <source srcset="{{ testimonial.displayPicture.url }}" type="image/webp">
+                                    <img class="blog-detail-image" src="{{ testimonial.displayPicture.url }}" alt="{{ testimonial.fullName }}" class="testimonial-photo" loading="lazy">
+                                </picture>
                                 <p class="testimonial-text">"{{ testimonial.content }}"</p>
                                 <h4>- {{ testimonial.fullName }}</h4>
                                 <small>{{ testimonial.createdAt|date:"F j, Y" }}</small>

@@ -38,17 +38,17 @@ class TestimonialForm(forms.ModelForm):
 class StaffMemberForm(forms.ModelForm):
     class Meta:
         model = models.staffMember
-        fields = ['fullName', 'position', 'profilePicture']
+        fields = ['fullName', 'position', 'displayPicture']
         widgets = {
             'fullName': forms.TextInput(attrs={'class': 'form-control'}),
             'position': forms.TextInput(attrs={'class': 'form-control'}),
             'biography': forms.Textarea(attrs={'class': 'form-control'}),
-            'profilePicture': forms.ClearableFileInput(attrs={'class': 'form-control-file'}),
+            'displayPicture': forms.ClearableFileInput(attrs={'class': 'form-control-file'}),
         }
         labels = {
             'fullName': 'Full Name',
             'position': 'Position',
-            'profilePicture': 'Profile Picture',
+            'displayPicture': 'Profile Picture',
             'biography': 'Biography',
         }
         help_texts = {
@@ -88,21 +88,21 @@ class BlogPostForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'image': forms.ClearableFileInput(attrs={'class': 'form-control-file'}),
+            'blogImage': forms.ClearableFileInput(attrs={'class': 'form-control-file'}),
             'summary': forms.TextInput(attrs={'class': 'form-control', 'cols': 40, 'rows': 10}),
             'excerpt': forms.Textarea(attrs={'class': 'form-control'}),
             'author': forms.TextInput(attrs={'class': 'form-control'}),
         }
         labels = {
             'title': 'Blog Post Title',
-            'image': 'Featured Image',
+            'blogImage': 'Featured Image',
             'summary': 'Summary',
             'excerpt': 'Content',
             'author': 'Author Name',
         }
         help_texts = {
             'title': 'Enter the title of the blog post.',
-            'image': 'Upload a featured image for the blog post.',
+            'blogImage': 'Upload a featured image for the blog post.',
             'sumary': 'Enter a brief summary of the blog post.',
             'excerpt': 'Write the content of the blog post.',
             'author': 'Enter the name of the author.',
@@ -117,7 +117,7 @@ class BlogPostForm(forms.ModelForm):
             'excerpt': {
                 'required': 'Please provide content for the blog post.',
             },
-            'image': {
+            'blogImage': {
                 'invalid': 'The uploaded file is not a valid image.',
             },
         }
@@ -148,7 +148,6 @@ class BookingForm(forms.ModelForm):
         widgets = {
             'firstName': forms.TextInput(attrs={'placeholder': 'First'}),
             'lastName': forms.TextInput(attrs={'placeholder': 'Last'}),
-             
             'region': forms.TextInput(attrs={'placeholder': 'Your region'}),
             'email': forms.EmailInput(attrs={'placeholder': 'Enter your email'}),
             'city': forms.TextInput(attrs={'placeholder': 'Your city'}),

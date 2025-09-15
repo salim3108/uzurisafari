@@ -68,7 +68,10 @@
                         {% for member in members %}
                         <div class="team-card">
                             <div class="card-content">
-                                <img src="{{ member.profilePicture.url }}" alt="{{ member.full_name }}" class="team-photo" loading="lazy">
+                                <picture>
+                                    <source srcset="{{ member.displayPicture.url }}" type="image/webp">
+                                    <img class="blog-detail-image" src="{{ member.displayPicture.url }}" alt="{{ member.full_name }}" class="team-photo" loading="lazy">
+                                </picture>
                                 <h4>{{ member.fullName }}</h4>
                                 <p class="position">{{ member.position }}</p>
                                 <small>{{ member.biography|truncatewords:20 }}</small>

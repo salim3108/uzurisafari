@@ -714,15 +714,15 @@ section.call-to-action {
   bottom: 50px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 768px) {
   .team-card {
-    flex: 0 0 50%; /* 2 per row on tablets */
+    flex: 0 0 50%;  /* 2 cards on tablets */
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 769px) {
   .team-card {
-    flex: 0 0 100%; /* 1 per row on mobile */
+    flex: 0 0 33.33%; /* 3 cards on desktops */
   }
 }
 

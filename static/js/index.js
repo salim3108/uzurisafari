@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Testimonial slider functionality
 document.addEventListener("DOMContentLoaded", function () {
-  const teamSlider = document.querySelector(".testimonial-slider");
-  const teamCards = document.querySelectorAll(".testimonial-card");
-  let teamIndex = 0;
+  const testimonialSlider = document.querySelector(".testimonial-slider");
+  const testimonialCards = document.querySelectorAll(".testimonial-card");
+  let testimonialIndex = 0;
 
   function getVisibleCards() {
     if (window.innerWidth <= 480) return 1;  // mobile
@@ -29,22 +29,22 @@ document.addEventListener("DOMContentLoaded", function () {
     return 3; // desktop
   }
 
-  function showNextTeam() {
+  function showNextTestimonial() {
     const visibleCards = getVisibleCards();
-    teamIndex++;
-    if (teamIndex > teamCards.length - visibleCards) {
-      teamIndex = 0; // reset when reaching the end
+    testimonialIndex++;
+    if (testimonialIndex > testimonialCards.length - visibleCards) {
+      testimonialIndex = 0; // reset when reaching the end
     }
-    teamSlider.style.transform = `translateX(-${teamIndex * (100 / visibleCards)}%)`;
+    testimonialSlider.style.transform = `translateX(-${testimonialIndex * (100 / visibleCards)}%)`;
   }
 
   // Auto-slide every 4 seconds
-  setInterval(showNextTeam, 4000);
+  setInterval(showNextTestimonial, 4000);
 
   // Recalculate on window resize
   window.addEventListener("resize", () => {
-    teamIndex = 0; // reset position on resize
-    teamSlider.style.transform = "translateX(0)";
+    testimonialIndex = 0; // reset position on resize
+    testimonialSlider.style.transform = "translateX(0)";
   });
 });
 
@@ -63,6 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function showNextTeam() {
     const visibleCards = getVisibleCards();
+    if (teamCards.length === 0) return; // ✅ Prevent running when empty
+
     teamIndex++;
     if (teamIndex > teamCards.length - visibleCards) {
       teamIndex = 0; // reset when reaching the end
@@ -70,17 +72,18 @@ document.addEventListener("DOMContentLoaded", function () {
     teamSlider.style.transform = `translateX(-${teamIndex * (100 / visibleCards)}%)`;
   }
 
-  // Auto-slide every 4 seconds
-  setInterval(showNextTeam, 4000);
+  if (teamCards.length > 0) {   // ✅ Only run slider if members exist
+    setInterval(showNextTeam, 4000);
 
-  // Recalculate on window resize
-  window.addEventListener("resize", () => {
-    teamIndex = 0; // reset position on resize
-    teamSlider.style.transform = "translateX(0)";
-  });
+    window.addEventListener("resize", () => {
+      teamIndex = 0;
+      teamSlider.style.transform = "translateX(0)";
+    });
+  }
 });
 
 
+// Toast notification function
 function showToast(message) {
     const toast = document.createElement("div");
     toast.className = "toast";
