@@ -1,12 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from . import models, forms
-from django.shortcuts import get_object_or_404
 from django.core.mail import send_mail
 from django.conf import settings
-import csv
-import uuid
-import os
+import csv, uuid, os
 from django.utils.timezone import now
 
 # Create your views here.

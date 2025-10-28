@@ -81,7 +81,7 @@ class Booking(models.Model):
     lastName = models.CharField(max_length=100)
     email = models.EmailField()
     phoneNumber = models.CharField(max_length=20)  # Will store full number e.g. +255755123456
-    nationality = CountryField()
+    nationality = CountryField( blank_label = "Select Nationality ...")
     region = models.CharField(max_length=100, blank=True, null=True)
     city = models.CharField(max_length=100, blank=True, null=True)
     postal = models.CharField(max_length=20, blank=True, null=True)
@@ -113,41 +113,33 @@ class BlogPost(models.Model):
     title = models.CharField(max_length=75)
     slug = models.SlugField(unique=True, blank=True)
     author = models.ForeignKey(staffMember, on_delete=models.CASCADE)
-    summary = models.CharField(max_length=435, blank=True, null=True, )
+    summary = models.CharField(max_length=435, blank=True, null=True)
     date_posted = models.DateTimeField(auto_now_add=True)
     blogImage = models.ImageField(upload_to='blog_images/')
-    excerpt = HTMLField()
-
+    excerpt = models.TextField()
 
     def save(self, *args, **kwargs):
-        if not self.slug: 
-            # Generate base slug
+        # ✅ Generate unique slug
+        if not self.slug:
             base_slug = slugify(self.title)
             slug = base_slug
             num = 1
-            # Ensure uniqueness
             while BlogPost.objects.filter(slug=slug).exists():
                 slug = f"{base_slug}-{num}"
                 num += 1
             self.slug = slug
+
         super().save(*args, **kwargs)
 
-    def __str__(self):
-        return self.title
-    
-
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-
-        # Path of uploaded file
+        # ✅ Convert uploaded image to WebP
         img_path = self.blogImage.path
         img = Image.open(img_path)
 
-        # Convert only if it's JPG/PNG
         if img.format in ["JPEG", "JPG", "PNG"]:
             webp_path = os.path.splitext(img_path)[0] + ".webp"
             img.save(webp_path, "webp", quality=80)
-
-            # Optionally: replace original with WebP
             self.blogImage.name = os.path.splitext(self.blogImage.name)[0] + ".webp"
             super().save(update_fields=["blogImage"])
+
+    def __str__(self):
+        return self.title
